@@ -139,4 +139,26 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.swipe img {
+  color: white;
+  width: 50px;
+}
+
+.swipe {
+  display: none;
+}
+
+@media screen and (max-width: 770px) {
+  .swipe {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 /*# sourceMappingURL=style.css.map */

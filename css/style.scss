@@ -136,3 +136,21 @@ body {
 
   // }
 }
+
+// swipe
+.swipe img {
+  color: white;
+  width: 50px;
+}
+.swipe {
+  display: none;
+}
+
+@media screen and (max-width: 770px) {
+  // swipe
+  .swipe {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+}
