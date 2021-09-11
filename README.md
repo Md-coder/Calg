@@ -1,6 +1,8 @@
 # Calg
 Calg is a user friendly CGPA(5.0) calculator web application.
 ![Calg look](https://github.com/Md-coder/Calg/blob/main/image/Behancebehance.png)
+click on the link below for more design details
+https://www.behance.net/gallery/127182685/Calg-A-50-CGPA-calculator/modules/721555121
 
 ## General Information
 * Calg is being designed and built to solve the problems of African students,
