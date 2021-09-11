@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Result</title>
+  </head>
+  <body style="background: white">
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light nav-trans">
+        <div class="container container-fluid">
+          <a class="navbar-brand text-dark" href="index.html">Calg<span class="dot">.</span></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="text-dark"><i class="fas fa-ellipsis-v"></i></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto text-end">
+              <li>
+                <a class="nav-link text-dark" href="One_semester.html">Single semester</a>
+              </li>
+              <li>
+                <a class="nav-link text-dark" href="two_semester.html">Double semester</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Results -->
+    <section id="result">
+      <div class="container">
+        <div class="result text-center">
+          <img src="./image/Study online.png" alt="study online illustration" class="img-fluid" />
+          <p class="fw-bold fs-2">
+            Hello <span id="nameRes"></span>,your CGPA is <span id="gradeRes"></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="footer" class="mt-5">
+      <div class="container footer-text text-center">
+        <p class="lead">Designed & Developed by MD</p>
+        <p class="lead">Copyright &copy;<span id="year"></span></p>
+      </div>
+    </footer>
+
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="options"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <a href="two_semester.html" class="btn-modal d-block">Two Semesters</a>
+            <a href="One_semester.html" class="btn-modal d-block">One Semester</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- preloader -->
+    <div id="overlayer">
+      <div class="preloader">
+        <div class="loader text-center">
+          <img
+            src="./image/loading.gif"
+            alt="preloader"
+            style="width: 100px; height: 100px"
+            class="img-fluid"
+          />
+          <p class="text-white fw-bold fs-2">Calg <span class="dot">.</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+    crossorigin="anonymous"
+  ></script>
+  <script src="app.js"></script>
+  <script>
+    const cGPA1 = JSON.parse(localStorage.getItem("cGPA"));
+    const cPGA2 = JSON.parse(localStorage.getItem("cGPA2"));
+    // display result on the result page
+    nameResult.innerHTML = localStorage.getItem("name");
+
+    // validation
+    if (isNaN(cPGA2) || cPGA2 === "" || cPGA2 === null) {
+      gradeResult.innerHTML = cGPA1.toFixed(2);
+    } else {
+      // two cpga calculation
+      const totalcgpa = ((cGPA1 + cPGA2) / 2).toFixed(2);
+      gradeResult.innerHTML = totalcgpa;
+    }
+    localStorage.removeItem("cGPA");
+    localStorage.removeItem("cGPA2");
+  </script>
+</html>
