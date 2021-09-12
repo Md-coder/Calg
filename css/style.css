@@ -86,6 +86,11 @@ body {
   color: white;
 }
 
+.lead {
+  opacity: 0.5;
+  color: white;
+}
+
 .inputx.error {
   border: 1px solid red;
 }
